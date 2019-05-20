@@ -42,6 +42,8 @@ create table billboard_with_songscore as select track_title, artist_title, expli
 COPY billboard_with_songscore to '/Users/angelobravo/Downloads/billboard_songscores.csv' delimiters ',' 
 with (format csv, header);
                                                                            
+create table billboard_songscores_sample as select * from billboard_with_songscore order by random() limit 150000;
+                                                                           
 COPY billboard_songscores_sample to '/Users/angelobravo/Downloads/billboard_songscores_sample.csv' delimiters ',' 
 with (format csv, header);
                                                                            
